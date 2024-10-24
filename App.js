@@ -13,7 +13,7 @@ import {
 export default function App() {
   return (
     <View style={styles.container}>
-      <SQLiteProvider databaseName="test2.db" onInit={init}>
+      <SQLiteProvider databaseName="test4.db" onInit={init}>
         <Content />
       </SQLiteProvider>
     </View>
@@ -23,6 +23,12 @@ export default function App() {
 export function Content() {
   const db = useSQLiteContext();
   const [todos, setTodos] = useState([]);
+  const [Services, setServices] = useState([]);
+
+  const fetchServices = async () => {
+    const services = await db.getAllAsync("SELECT * FROM ServiceTypes");
+    setServices(services);
+  };
 
   async function setup() {
     const result = await fetchMeetings(db);
@@ -39,7 +45,6 @@ export function Content() {
   }
 
   async function deleteMeetingA(id) {
-    console.log("---> ", id);
     deleteMeeting(db, id);
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
