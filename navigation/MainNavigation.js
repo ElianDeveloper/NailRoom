@@ -1,13 +1,15 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+import { Text, TouchableOpacity, Image, StyleSheet } from "react-native";
+import colors from "../utils/colors"; // Importa los colores
 
 // Screens
 import MeetingScreen from "../screens/MeetingScreen";
 import TabsNavigation from "./TabsNavigation";
 import BenefitScreen from "../screens/BenefitScreen";
-
+import ServiceScreen from "../screens/ServiceScreen";
+import ContactScreen from "../screens/ContactScreen";
 // Init Stack
 const Stack = createNativeStackNavigator();
 
@@ -18,24 +20,19 @@ export default function MainNavigation() {
         screenOptions={{
           headerShown: true,
           headerStyle: {
-            backgroundColor: "#1f2937", // Fondo del header
+            backgroundColor: colors.bg100, // Usa el color de fondo
           },
-          headerTitle: () => (
-            <Text style={styles.headerTitle}>NailRoom</Text>
-          ),
           headerTitleAlign: "center",
+          headerTitle: () => <Text></Text>,
           headerLeft: () => (
             <TouchableOpacity style={{ marginLeft: 15 }}>
-              <Image
-                source={require("../assets/icons/home3.png")}
-                style={styles.icon}
-              />
+              <Text style={styles.headerTitle}>NailRoom</Text>
             </TouchableOpacity>
           ),
           headerRight: () => (
             <TouchableOpacity style={{ marginRight: 15 }}>
               <Image
-                source={require("../assets/icons/ingreso.png")}
+                source={require("../assets/icons/menu.png")}
                 style={styles.icon}
               />
             </TouchableOpacity>
@@ -46,6 +43,8 @@ export default function MainNavigation() {
         <Stack.Screen name="Meetings" component={MeetingScreen} />
         <Stack.Screen name="Main" component={TabsNavigation} />
         <Stack.Screen name="Benefit" component={BenefitScreen} />
+        <Stack.Screen name="Service" component={ServiceScreen} />
+        <Stack.Screen name="Contacts" component={ContactScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -55,12 +54,12 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#FFFFFF", // Color del texto
-    fontFamily: "sans-serif-condensed", // Cambia esto a una fuente que prefieras
+    color: colors.text100, // Usa el color del texto
+    fontFamily: "sans-serif-condensed",
   },
   icon: {
     width: 24,
     height: 24,
-    tintColor: "#FFFFFF", // Asegúrate de que los íconos sean visibles
+    tintColor: colors.text100, // Asegúrate de que los íconos sean visibles
   },
 });

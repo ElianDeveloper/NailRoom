@@ -3,10 +3,10 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../utils/colors";
 
-export default function BenefitScreen() {
+export default function ServiceScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={{ color: colors.text100 }}>BenefitScreen</Text>
+      <Text style={{ color: colors.text100 }}>ServiceScreen</Text>
     </SafeAreaView>
   );
 }

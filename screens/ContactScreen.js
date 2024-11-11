@@ -1,15 +1,17 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import colors from "../utils/colors";
 
-export default function BenefitScreen() {
+const ContactScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={{ color: colors.text100 }}>BenefitScreen</Text>
+      <Text style={{ color: colors.text100 }}>ContactScreen</Text>
     </SafeAreaView>
   );
-}
+};
+
+export default ContactScreen;
 
 const styles = StyleSheet.create({
   container: {
