@@ -6,10 +6,12 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import colors from "../utils/colors";
 import AddMeetingModal from "./AddMeetingModal";
 
 export default function CustomTabBarButton({ children, onPress }) {
+  const navigation = useNavigation();
   const [animation] = useState(new Animated.Value(0));
   const [isOpen, setIsOpen] = useState(false);
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
@@ -109,7 +111,7 @@ export default function CustomTabBarButton({ children, onPress }) {
       </Animated.View>
 
       <Animated.View style={[styles.floatingButton, firstButtonStyle]}>
-        <TouchableOpacity onPress={() => console.log("Button 1")}>
+        <TouchableOpacity onPress={() => navigation.navigate("AddService")}>
           <View style={[styles.button, { backgroundColor: colors.primary100 }]}>
             <Image
               source={require("../assets/icons/add-services.png")}
