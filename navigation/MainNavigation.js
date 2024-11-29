@@ -18,6 +18,8 @@ import BenefitScreen from "../screens/BenefitScreen";
 import ServiceScreen from "../screens/ServiceScreen";
 import ContactScreen from "../screens/ContactScreen";
 import AddServiceScreen from "../screens/AddServiceScreen";
+import AddContactScreen from "../screens/AddContactScreen";
+import AddMeetingScreen from "../screens/AddMeetingScreen";
 // Init Stack
 const Stack = createNativeStackNavigator();
 
@@ -80,6 +82,74 @@ export default function MainNavigation() {
         <Stack.Screen
           name="AddService"
           component={AddServiceScreen}
+          options={{
+            headerShown: false,
+            cardStyleInterpolator:
+              CardStyleInterpolators.forModalPresentationIOS,
+            gestureDirection: "vertical",
+            transitionSpec: {
+              open: {
+                animation: "spring",
+                config: {
+                  damping: 25,
+                  mass: 0.8,
+                  stiffness: 170,
+                  overshootClamping: false,
+                  restDisplacementThreshold: 0.01,
+                  restSpeedThreshold: 0.01,
+                },
+              },
+              close: {
+                animation: "spring",
+                config: {
+                  damping: 25,
+                  mass: 0.8,
+                  stiffness: 170,
+                  overshootClamping: false,
+                  restDisplacementThreshold: 0.01,
+                  restSpeedThreshold: 0.01,
+                },
+              },
+            },
+          }}
+        />
+        <Stack.Screen
+          name="AddContact"
+          component={AddContactScreen}
+          options={{
+            headerShown: false,
+            cardStyleInterpolator:
+              CardStyleInterpolators.forModalPresentationIOS,
+            gestureDirection: "vertical",
+            transitionSpec: {
+              open: {
+                animation: "spring",
+                config: {
+                  damping: 25,
+                  mass: 0.8,
+                  stiffness: 170,
+                  overshootClamping: false,
+                  restDisplacementThreshold: 0.01,
+                  restSpeedThreshold: 0.01,
+                },
+              },
+              close: {
+                animation: "spring",
+                config: {
+                  damping: 25,
+                  mass: 0.8,
+                  stiffness: 170,
+                  overshootClamping: false,
+                  restDisplacementThreshold: 0.01,
+                  restSpeedThreshold: 0.01,
+                },
+              },
+            },
+          }}
+        />
+        <Stack.Screen
+          name="AddMeeting"
+          component={AddMeetingScreen}
           options={{
             headerShown: false,
             cardStyleInterpolator:

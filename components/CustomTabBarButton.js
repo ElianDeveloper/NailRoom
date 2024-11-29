@@ -89,7 +89,7 @@ export default function CustomTabBarButton({ children, onPress }) {
       />
 
       <Animated.View style={[styles.floatingButton, thirdButtonStyle]}>
-        <TouchableOpacity onPress={() => setShowAppointmentModal(true)}>
+        <TouchableOpacity onPress={() => navigation.navigate("AddMeeting")}>
           <View style={[styles.button, { backgroundColor: colors.primary100 }]}>
             <Image
               source={require("../assets/icons/calendar.png")}
@@ -100,7 +100,7 @@ export default function CustomTabBarButton({ children, onPress }) {
       </Animated.View>
 
       <Animated.View style={[styles.floatingButton, secondButtonStyle]}>
-        <TouchableOpacity onPress={() => console.log("Button 2")}>
+        <TouchableOpacity onPress={() => navigation.navigate("AddContact")}>
           <View style={[styles.button, { backgroundColor: colors.primary100 }]}>
             <Image
               source={require("../assets/icons/add-contact.png")}

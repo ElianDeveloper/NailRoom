@@ -12,9 +12,6 @@ const colors = {
   error: "#FF4444",
 };
 
-export default colors;
-
-
 // const colors = {
 //   primary100: "#FF69B4", // Rosa principal para elementos destacados
 //   primary200: "#FFB6C1", // Rosa más claro para variaciones
@@ -28,3 +25,7 @@ export default colors;
 //   bg300: "#EFEFEF", // Gris claro para fondos terciarios
 //   error: "#FF4444", // Rojo para errores
 // };
+
+export default colors;
+
+
